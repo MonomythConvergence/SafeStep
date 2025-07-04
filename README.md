@@ -6,7 +6,7 @@ At least in theory, let's see how far I'll get.
 Stack:
 ```kotlin
 // Core Architecture
-Kotlin + Jetpack Compose + Hilt + Single-Activity
+Kotlin + Jetpack Compose + Hilt + Single-Activity + Minimal module structure (app, core, features)
 
 // Safety Features
 WorkManager (Location) · Room + SQLCipher (Storage) · 
