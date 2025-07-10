@@ -1,8 +1,15 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    //added
+    alias(libs.plugins.compose.compiler)
 }
-
+kotlin{
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_11)}
+}
 android {
     namespace = "com.example.features"
     compileSdk = 36
@@ -27,9 +34,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
+
 }
 
 dependencies {
