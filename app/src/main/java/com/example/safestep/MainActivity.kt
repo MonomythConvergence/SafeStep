@@ -15,7 +15,7 @@ import com.example.safestep.ui.theme.SafeStepTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        val splashScreen = installSplashScreen().setKeepOnScreenCondition{true} //todo remove condition
+        installSplashScreen().setKeepOnScreenCondition{true} //todo remove condition
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
