@@ -1,5 +1,7 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -73,4 +75,5 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation)
     implementation(libs.hilt.android)
+    implementation(libs.androidx.core.splashscreen)
 }

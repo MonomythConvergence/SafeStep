@@ -17,19 +17,28 @@ Stack (doubling as "things I'm learning") list:
 
 ```kotlin
 // Core Architecture
-Kotlin + Jetpack Compose (Material 3) + Hilt + Single-Activity 
-+ Minimal module structure (app, core, features, data) + Reactive Patterns: RxJava 3 (event streams)
+Kotlin + Jetpack Compose (Material 3)+Hilt+Single-Activity
++Minimal module structure(app, core, features, data) + Reactive Patterns : RxJava 3(event streams)
 
 // Safety Features
-WorkManager (Location) · Room + SQLCipher (Storage) · 
-Linphone SDK (Emergency Calls) · BroadcastReceiver (Panic Mode) · 
-AlarmManager (Check-ins) · RxJava (sensor fusion)
+WorkManager(Location) · Room+SQLCipher (Storage) ·
+Linphone SDK (Emergency Calls) · BroadcastReceiver (Panic Mode) ·
+AlarmManager(Check - ins) · RxJava (sensor fusion)
 
 // Intelligence
 TensorFlow Lite (Anomaly Detection) · MQTT (Eclipse Paho for alerts)
 
 // Infrastructure
-Retrofit (Networking) · GitHub Actions (CI/CD) · Firebase Crashlytics (monitoring)
+Retrofit(Networking) · GitHub Actions (CI/CD) · Firebase Crashlytics (monitoring)
 
 // Under consideration
 Detekt
+```
+
+Structure:
+
+```kotlin
+// Screens
+Onboarding(permissions requests)
+Profile (manage data, set contacts, other settings)
+Main screen (tracking data status icons, anomalies display, other stats: speed, elevation changes, cadance(look up)) 
