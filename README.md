@@ -17,8 +17,13 @@ Stack (doubling as "things I'm learning") list:
 
 ```kotlin
 // Core Architecture
-//Kotlin + Jetpack Compose (Material 3)+Hilt+Single-Activity
-//+Minimal module structure(app, core, features, data) + Reactive Patterns : RxJava 3(event streams)
+//Kotlin + MVI + SharedFlow  + Jetpack Compose (Material 3) + Hilt + Single-Activity
+
+//Minimal module structure (:app, :core, :features, :data) to be KMP-ready: 
+:app and :feature modules contains all Android-specific logic. 
+All interfaces are contained to :core.
+
+//Reactive Patterns : RxJava 3(event streams, exclusive to Android platform)
 
 // Safety Features
 //WorkManager(Location) · Room+SQLCipher (Storage) ·
@@ -29,16 +34,29 @@ Stack (doubling as "things I'm learning") list:
 //TensorFlow Lite (Anomaly Detection) · MQTT (Eclipse Paho for alerts)
 
 // Infrastructure
-//Retrofit(Networking) · GitHub Actions (CI/CD) · Firebase Crashlytics (monitoring)
+//Networking: Ktor(okhttp)
+//CI/CD : GitHub Actions
+//Monitoring: Firebase Crashlytics
 
-// Under consideration
-//Detekt
-```
+// Testing
+//Unit tests: JUnit 5
+//Android instrumentation: Espresso
+//Mocking: Mockito, MockK
+//Coroutines/testing : kotlinx-coroutines-test
+//Architecture / MVI testing: Turbine (for flows) or RxJava TestScheduler (for Rx streams)
+//Room testing: Room-testing (in-memory DB)
+//Integration / UI: Robolectric (unit-level UI) + Espresso (instrumentation)
+//CI: GitHub Actions matrix for unit + instrumentation tests
 
-Structure:
+// Linter
+//Detekt (only on Android-friendly app/feature modules)
 
-```kotlin
-// Screens
-Onboarding(permissions requests)
-Profile (manage data, set contacts, other settings)
+// Future expansion:
+// Web-Compose, Flow converters for RxJava
+
+// Screen Structure
+Onboarding: (permissions requests, use instructions)
+
 Main screen (tracking data status icons, anomalies display, other stats: speed, elevation changes, cadance(look up)) 
+
+Profile (manage data, set contacts, other settings)
