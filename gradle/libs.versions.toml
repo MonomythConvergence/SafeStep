@@ -11,10 +11,22 @@ activityCompose = "1.10.1"
 composeBom = "2025.06.01"
 appcompat = "1.7.1"
 material = "1.12.0"
-#added
-ksp="2.2.0-2.0.2"
-hilt = "2.56.2"
-hiltCompose="1.2.0"
+#--added
+#-DI & async
+dagger = "2.47"
+rxjava = "3.1.5"
+rxandroid = "3.0.2"
+rxrelay = "3.0.0"
+#-testing
+robolectric = "4.11"
+junit_jupiter = "5.9.2"
+mockk = "1.13.5"
+kotlinx_coroutines_test = "1.7.3"
+turbine = "1.0.0"
+runtime = "1.9.0"
+foundation = "1.9.0"
+navigationCompose = "2.9.3"
+material3 = "1.3.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,16 +46,28 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-#added
-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
-hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltCompose" }
-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+#--added
+#-DI & async
+dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
+dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
+rxjava = { group = "io.reactivex.rxjava3", name = "rxjava", version.ref = "rxjava" }
+rxandroid = { group = "io.reactivex.rxjava3", name = "rxandroid", version.ref = "rxandroid" }
+rxrelay = { group = "com.jakewharton.rxrelay3", name = "rxrelay", version.ref = "rxrelay" }
+
+# Testing
+robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit_jupiter" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx_coroutines_test" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "runtime" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 #added
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-hilt-plugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

@@ -1,14 +1,11 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     //added
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt.plugin)
     alias(libs.plugins.compose.compiler)
+    kotlin("kapt")
 }
 kotlin{
     compilerOptions {
@@ -20,7 +17,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.safestep"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -63,6 +60,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -72,8 +70,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     //added deps
-    ksp(libs.hilt.compiler)
-    implementation(libs.hilt.navigation)
-    implementation(libs.hilt.android)
     implementation(libs.androidx.core.splashscreen)
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
 }

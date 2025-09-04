@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     //added
     alias(libs.plugins.compose.compiler)
+    kotlin("kapt")
 }
 kotlin{
     compilerOptions {
@@ -15,7 +16,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -42,7 +43,16 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    //added
+    implementation(libs.dagger)
+    implementation(libs.rxjava)
+    implementation(libs.rxandroid)
+    implementation(libs.rxrelay)
+    kapt(libs.dagger.compiler)
 }

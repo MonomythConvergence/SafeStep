@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import com.example.features.presentation.ui.MainScreen
 
 @Composable
 fun AppNavHost(
@@ -12,9 +14,14 @@ fun AppNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = "", //todo
+        startDestination = "main_screen", //todo refactor to onboarding once available
         modifier = modifier
     ) {
+        composable("main_screen") {
+            MainScreen()
+                //todo add navigation to profile once available
+                }
+
     }
 }
 

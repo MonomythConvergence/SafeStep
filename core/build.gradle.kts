@@ -4,8 +4,6 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     //addded
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt.plugin)
 }
 kotlin{
     compilerOptions {
@@ -16,7 +14,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -48,7 +46,4 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //added deps
-    ksp(libs.hilt.compiler)
-    implementation(libs.hilt.navigation)
-    implementation(libs.hilt.android)
 }
